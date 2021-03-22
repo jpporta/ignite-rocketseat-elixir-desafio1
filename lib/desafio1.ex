@@ -1,6 +1,7 @@
 defmodule Desafio1 do
   alias Desafio1.Booking.Agent, as: BookingAgent
   alias Desafio1.Booking.CreateOrUpdate, as: BookingCreateorUpdate
+  alias Desafio1.Booking.Report, as: BookingReport
   alias Desafio1.User.Agent, as: UserAgent
   alias Desafio1.User.CreateOrUpdate, as: UserCreateorUpdate
 
@@ -12,4 +13,6 @@ defmodule Desafio1 do
   defdelegate create_user(params), to: UserCreateorUpdate, as: :call
   defdelegate create_booking(params), to: BookingCreateorUpdate, as: :call
   defdelegate get_booking(params), to: BookingAgent, as: :get
+  defdelegate generate_report(), to: BookingReport, as: :create
+  defdelegate generate_report(params), to: BookingReport, as: :create
 end
