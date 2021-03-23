@@ -27,7 +27,7 @@ defmodule Desafio1.Booking.Booking do
          id_usuario: id_usuario
        }}
     else
-      error -> error
+      _error -> {:error, "Invalid Date"}
     end
   end
 end
